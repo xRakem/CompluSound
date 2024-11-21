@@ -1,4 +1,5 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<!-- Barra de navegación-->
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <a class="navbar-brand" routerLink="/">CompluSound</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,3 +35,38 @@
 </nav>
 
 <router-outlet />
+
+<!-- Sección footer -->
+<footer class="footer">
+
+    <!-- Sección escudos y logo -->
+     <div class="footer-logos">
+      <img class="img-ucm" src="assets/ucmEscudo.png" alt="Escudo de la Universidad Complutense de Madrid">
+      <img class="img-fdi" src="assets/fdiEscudo.png" alt="Escudo de la Facultadad de Informática de la Universidad Complutense de Madrid">
+    </div>
+    
+    <!-- Sección de enlaces principales -->
+    <div class="footer-section">
+     <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a routerLink="contact-us">Contact Us</a></li>
+      </ul>
+    </div>
+
+  <!-- Copyright -->
+  <div class="footer-bottom">
+    <p>&copy; 2024 Universidad Complutense de Madrid. All rights reserved.</p>
+    <ul>
+      <li>
+        <a href="#">Terms & Conditions</a>
+      </li>
+      <li>
+        <a href="#">Privacy Policy</a>
+      </li>
+    </ul>
+  </div>
+</footer>
+
+
