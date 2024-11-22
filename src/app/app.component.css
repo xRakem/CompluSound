@@ -4,9 +4,15 @@
     background-color: #e7eaf0; /* Fondo claro */
 }
 
-.nav-link:hover {
+.nav-link:hover {       /*Pasar el raton cambia el grosor*/
     font-weight: 500;
 }
+
+/* Para la navegación activa */
+.activo{
+  font-weight: 500;
+}
+
 
 /* Footer*/
 /* General del footer */
@@ -37,7 +43,6 @@
     display: flex;
     justify-content: center;
     list-style: none; /* Eliminar viñetas */
-    
   }
   
   .footer-section ul li {
@@ -89,3 +94,5 @@
     content: "|"; /* Añade una barra después de cada elemento excepto el último */
     margin-left: 10px; /* Espacio a la izquierda de la barra */
   }
+
+  
