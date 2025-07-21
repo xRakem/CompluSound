@@ -1,0 +1,16 @@
+
+form{
+
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+ 
+}
+
+h3{
+    padding-top: 2%;
+}

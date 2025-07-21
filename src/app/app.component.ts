@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
@@ -13,6 +15,11 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
 export class AppComponent {
   title = 'CompluSound';
   
+  isLogin: boolean = false;
+
+  cambiarMenuLogin(val: boolean){
+    this.isLogin = val;
+  }
 
   constructor(private _router: Router){ }
 

@@ -20,22 +20,48 @@
             <li><a class="dropdown-item" routerLink="map/ucm-map">UCM Map</a></li>
           </ul>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item">
           <a class="nav-link" [ngClass]="{ 'activo': isActive('/forum') }" routerLink="forum">Forum</a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item">
           <a class="nav-link" [ngClass]="{ 'activo': isActive('/add-sound') }" routerLink="add-sound">Add Sound</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" [ngClass]="{ 'activo': isActive('/contact-us') }" routerLink="contact-us">Contact Us</a>
         </li>
       </ul>
+      <!-- Este bloque se va a la derecha -->
+         
+      <ul class="navbar-nav ms-auto">
+        <ng-container *ngIf="isLogin">
+          <li class="nav-item dropdown dropstart">
+          <a class="nav-link dropdown-toggle" [ngClass]="{ 'activo': isActive('/account/login')||isActive('/account/update-account')||isActive('/account/delete-account') }" role="button" data-bs-toggle="dropdown" aria-expanded="false">Account</a>
+          <ul class="dropdown-menu">
+            <li><a (click)="cambiarMenuLogin(false)" class="dropdown-item" routerLink="account/login">Log Out</a></li>
+            <li><a (click)="cambiarMenuLogin(true)" class="dropdown-item" routerLink="account/update-account">Update account</a></li>
+            <li><a (click)="cambiarMenuLogin(true)" class="dropdown-item" routerLink="account/delete-account">Delete account</a></li>
+          </ul>
+          </li>
+        </ng-container>
+   
+        <ng-container *ngIf="!isLogin">
+          <li class="nav-item dropdown dropstart">
+          <a class="nav-link dropdown-toggle" [ngClass]="{ 'activo': isActive('/account/login')||isActive('/account/create-account')}" role="button" data-bs-toggle="dropdown" aria-expanded="false">Account</a>
+          <ul class="dropdown-menu">
+            <li><a (click)="cambiarMenuLogin(true)" class="dropdown-item" routerLink="account/login">Log In</a></li>
+            <li><a (click)="cambiarMenuLogin(false)" class="dropdown-item" routerLink="account/create-account">Create an Account</a></li>
+          </ul>
+          </li>
+        </ng-container>
+      </ul>
+
+      
     </div>
   </div>
 </nav>
 
 <router-outlet />
-
+<!--log -->
 <!-- Sección footer -->
 <footer class="footer">
 

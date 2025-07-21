@@ -1,0 +1,26 @@
+<div class="container text-center">
+    <h3 class="mb-4">Account setup</h3>
+
+    <!-- Botón para abrir el modal -->
+    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalBorrarCuenta">
+      Delete account
+    </button>
+  </div>
+
+  <!-- Modal de confirmación -->
+  <div class="modal fade" id="modalBorrarCuenta" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-danger">
+        <div class="modal-header">
+          <h5 class="modal-title text-danger" id="modalLabel">You're sure?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          This action will permanently delete your account. Do you wish to continue?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger" (click)="borrarCuenta()">Yes, delete account</button>
+        </div>
+      </div>
+</div>

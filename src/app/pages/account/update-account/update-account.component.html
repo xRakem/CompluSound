@@ -1,0 +1,70 @@
+<div class="container">
+<h3 class="text-center mb-4">Edit my Account</h3>
+ 
+<form [formGroup]="formularioAccount" (ngSubmit)="enviar()">
+   
+   <div class="mb-3">
+     <label for="userName" class="form-label">User Name</label>
+      <input [ngClass]="{'is-invalid':hasErrors('userName', 'required')}"
+      type="text" class="form-control" id="userName" formControlName="userName" placeholder="Enter your user name.">
+        <div class="text-danger" *ngIf="hasErrors('userName', 'required')">
+            Please provide a valid user or email.
+        </div>
+    </div>
+    
+    <div class="mb-3">
+        <label for="foto" class="form-label">Profile photo</label>
+        <input type="file" class="form-control" id="foto">
+        <img id="preview" src="foto-actual.jpg" alt="Foto actual" class="rounded-circle mt-2" width="100" height="100">
+    </div>  
+    
+    
+   <div class="row">
+    <div class="col-md-6 mb-3">
+      <label for="firstName" class="form-label">First Name</label>
+       <input [ngClass]="{'is-invalid':hasErrors('firstName', 'required')}"
+       type="text" class="form-control" id="firstName" formControlName="firstName" placeholder="Enter your name." >
+       <div class="text-danger" *ngIf="hasErrors('firstName', 'required')">
+            Please provide a name.
+        </div>
+    </div>
+    <div class="col-md-6 mb-3">
+     <label for="lastName" class="form-label">Last Name</label>
+      <input [ngClass]="{'is-invalid':hasErrors('lastName', 'required')}"
+      type="text" class="form-control" id="lastName" formControlName="lastName" placeholder="Enter your last name.">
+        <div class="text-danger" *ngIf="hasErrors('lastName', 'required')">
+            Please provide a last name.
+        </div>
+    </div>
+    </div>
+
+    <div class="mb-3">
+     <label for="email" class="form-label">Email address</label>
+      <input [ngClass]="{'is-invalid':hasErrors('email', 'required')||hasErrors('email','email')}"
+      type="text" class="form-control" id="email" formControlName="email" placeholder="Enter your user or email address.">
+        <div class="text-danger" *ngIf="hasErrors('email', 'email') || hasErrors('email', 'required')">
+            Please provide a valid email.
+        </div>
+    </div>
+
+    <div class="row">
+    <div class="col-md-6 mb-3">
+     <label for="password" class="form-label">Password</label>
+      <input [ngClass]="{'is-invalid':hasErrors('password', 'required')}"
+      type="password" class="form-control" id="password" formControlName="password" placeholder="Enter your password.">
+        <div class="text-danger" *ngIf="hasErrors('password', 'required')">
+            Please provide a valid password.
+        </div>
+    </div>
+    <div class="col-md-6 mb-3">
+     <label for="confirmPass" class="form-label">Confirm password</label>
+      <input [ngClass]="{'is-invalid':hasErrors('confirmPass', 'required')}"
+      type="password" class="form-control" id="confirmPass" formControlName="confirmPass" placeholder="Confirm your password.">
+        <div class="text-danger" *ngIf="hasErrors('confirmPass', 'required')">
+            Please provide a valid user or email.
+        </div>
+    </div>
+    </div>
+      <button type="submit" class="btn btn-primary w-100">Edit profile</button>
+ </form>
+</div>
