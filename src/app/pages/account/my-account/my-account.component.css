@@ -1,0 +1,26 @@
+.avatar {
+      width: 100px;
+      height: 100px;
+      background-color: #6c757d;
+      color: white;
+      font-size: 36px;
+      font-weight: bold;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+    }
+.icono-contador {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+.icono-contador i {
+      font-size: 1.5rem;
+    }
+
+a{
+  
+  margin-top: 10px;
+}

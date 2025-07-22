@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-update-account',
@@ -11,16 +12,18 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 export class UpdateAccountComponent implements OnInit{
  
- formularioAccount: FormGroup;
+  formularioAccount: FormGroup;
   
   usuarioActivo: any = {
     userName: 'Patito',
     firstName: 'Juan',
     lastName: 'Rey',
     email: 'juan@gmail.com',
-    password: 'tukituki'
+    password: 'tukituki',
+    fotoUrl: '' // si tiene una URL, se mostrará la imagen
   }
 
+  
   constructor(private from: FormBuilder ){ 
     this.formularioAccount = this.from.group({
       userName: ['', [Validators.required]],
@@ -51,6 +54,7 @@ export class UpdateAccountComponent implements OnInit{
       password: this.usuarioActivo.password,
       confirmPass: this.usuarioActivo.password
     })
+    
   }
 
   hasErrors( controlName: string, errorType: string){

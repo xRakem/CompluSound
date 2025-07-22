@@ -1,0 +1,48 @@
+<div class="container mt-5">
+    <div class="card shadow p-4">
+      <div class="row align-items-center">
+        
+        <!-- Avatar e información -->
+        <div class="col-md-4 text-center mb-4 mb-md-0">
+          <div class="avatar mx-auto" *ngIf="!usuarioActivo.fotoUrl" >{{ usuarioActivo.userName[0] }}</div>
+          <img *ngIf="usuarioActivo.fotoUrl" [src]="usuarioActivo.fotoUrl" alt="Foto actual" class="avatar mx-auto">
+          <h5 class="mt-3">{{ usuarioActivo.userName }}</h5>
+        </div>
+
+        <!-- Detalles de usuario -->
+        <div class="col-md-8">
+          <h4>Profile information</h4>
+          <p><strong>Name:</strong> {{ usuarioActivo.firstName }}</p>
+          <p><strong>Last Name:</strong> {{ usuarioActivo.lastName }}</p>
+          <p><strong>Email:</strong> {{ usuarioActivo.email }}</p>
+
+          <hr>
+
+          <!-- Contadores -->
+          <div class="d-flex flex-wrap gap-4 mt-3">
+            <div class="icono-contador text-primary">
+              <mat-icon aria-hidden="false" fontIcon="graphic_eq"></mat-icon>
+              <span>{{ usuarioActivo.numSounds }} sounds</span>
+            </div>
+            <div class="icono-contador text-success">
+              <mat-icon aria-hidden="false" fontIcon="download"></mat-icon>
+              <span>{{ usuarioActivo.numDownloads }} downloads</span>
+            </div>
+            <div class="icono-contador text-warning">
+              <mat-icon aria-hidden="false" fontIcon="gesture"></mat-icon>
+              <span>{{ usuarioActivo.numThreads }} threads</span>
+            </div>
+            <div class="icono-contador text-danger">
+              <mat-icon aria-hidden="false" fontIcon="article_person"></mat-icon>
+              <span>{{ usuarioActivo.numPost }} posts</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      <a routerLink="/account/update-account" class="btn btn-primary">Ir al perfil</a>
+   </div>
+  </div>
+
+  

@@ -30,18 +30,33 @@
           <a class="nav-link" [ngClass]="{ 'activo': isActive('/contact-us') }" routerLink="contact-us">Contact Us</a>
         </li>
       </ul>
-      <!-- Este bloque se va a la derecha -->
-         
+    
+      <!--recibimos el estado de login de cada hijo para actualizar la barra de navegacion segun en que sitio se este moviendo-->
+      <!--app-update-account (isLogin)="recibirLogin($event)"></app-update-account> -->
+    
+      <!-- Este bloque se va a la derecha y es donde se muestra las opciones de perfil de usuario-->
       <ul class="navbar-nav ms-auto">
         <ng-container *ngIf="isLogin">
+        
           <li class="nav-item dropdown dropstart">
-          <a class="nav-link dropdown-toggle" [ngClass]="{ 'activo': isActive('/account/login')||isActive('/account/update-account')||isActive('/account/delete-account') }" role="button" data-bs-toggle="dropdown" aria-expanded="false">Account</a>
-          <ul class="dropdown-menu">
-            <li><a (click)="cambiarMenuLogin(false)" class="dropdown-item" routerLink="account/login">Log Out</a></li>
-            <li><a (click)="cambiarMenuLogin(true)" class="dropdown-item" routerLink="account/update-account">Update account</a></li>
-            <li><a (click)="cambiarMenuLogin(true)" class="dropdown-item" routerLink="account/delete-account">Delete account</a></li>
-          </ul>
+            <div class="d-flex align-items-center gap-3">
+            <a class="nav-link dropdown-toggle" 
+              [ngClass]="{ 'activo': isActive('/account/login')||isActive('/account/update-account')||isActive('/account/delete-account') }" 
+              role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ usuario.nombre }}</a>
+            <ul class="dropdown-menu">
+              <li><a (click)="cambiarMenuLogin(true)" class="dropdown-item" routerLink="account/my-account">My profile</a></li>
+              <li><a (click)="cambiarMenuLogin(true)" class="dropdown-item" routerLink="account/update-account">Update account</a></li>
+              <li><a (click)="cambiarMenuLogin(true)" class="dropdown-item" routerLink="account/delete-account">Delete account</a></li>
+              <li><a (click)="cambiarMenuLogin(false)" class="dropdown-item" routerLink="account/login">Log Out</a></li>
+            </ul>
+            
+            <div class="avatar" *ngIf="!usuario.fotoUrl">
+                {{ usuario.nombre[0] }}
+            </div>
+            <img *ngIf="usuario.fotoUrl" [src]="usuario.fotoUrl" class="rounded-circle" width="40" height="40">
+            </div>
           </li>
+
         </ng-container>
    
         <ng-container *ngIf="!isLogin">
@@ -61,6 +76,8 @@
 </nav>
 
 <router-outlet />
+
+
 <!--log -->
 <!-- Sección footer -->
 <footer class="footer">

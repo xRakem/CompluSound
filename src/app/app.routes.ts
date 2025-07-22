@@ -11,6 +11,7 @@ import { LoginComponent } from './pages/account/login/login.component';
 import { CreateAccountComponent } from './pages/account/create-account/create-account.component';
 import { UpdateAccountComponent } from './pages/account/update-account/update-account.component';
 import { DeleteAccountComponent } from './pages/account/delete-account/delete-account.component';
+import { MyAccountComponent } from './pages/account/my-account/my-account.component';
 
 
 export const routes: Routes = [
@@ -30,7 +31,8 @@ export const routes: Routes = [
             { path: 'login', component: LoginComponent},
             { path: 'create-account', component: CreateAccountComponent},
             { path: 'update-account', component: UpdateAccountComponent},
-            { path: 'delete-account', component: DeleteAccountComponent}
+            { path: 'delete-account', component: DeleteAccountComponent},
+            { path: 'my-account', component: MyAccountComponent}
         ]
     },
     { path: '**', redirectTo: '', pathMatch: 'full' },
